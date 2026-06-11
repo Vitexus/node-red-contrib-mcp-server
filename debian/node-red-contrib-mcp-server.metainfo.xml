@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="addon">
+  <id>io.github.vitexus.node_red_contrib_mcp_server</id>
+  <extends>io.github.vitexus.node_red</extends>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Node-RED MCP Server</name>
+  <summary>Node-RED wrapper for Model Context Protocol (MCP) servers</summary>
+  <description>
+    <p>Node-RED wrapper for Model Context Protocol (MCP) servers providing
+standardized AI agent tool interfaces, server lifecycle management,
+real-time communication capabilities, and visual MCP server creation.</p>
+  </description>
+  <url type="homepage">https://github.com/MadTinker/node-red-contrib-mcp-server</url>
+  <url type="vcs-browser">https://github.com/Vitexus/node-red-contrib-mcp-server</url>
+  <developer id="io.github.vitexus">
+    <name>VitexSoftware</name>
+  </developer>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="1.1.5" date="2026-06-11"/>
+  </releases>
+</component>

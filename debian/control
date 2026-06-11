@@ -1,0 +1,28 @@
+Source: node-red-contrib-mcp-server
+Section: javascript
+Priority: optional
+Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-nodejs | pkg-js-tools,
+ appstream
+Standards-Version: 4.7.0
+Homepage: https://github.com/MadTinker/node-red-contrib-mcp-server
+Rules-Requires-Root: no
+
+Package: node-red-contrib-mcp-server
+Architecture: all
+Multi-Arch: foreign
+Depends:
+ ${misc:Depends},
+ node-red (>= 4.0),
+ node-ws,
+ node-uuid,
+ node-express,
+ node-axios,
+ node-eventsource,
+ node-cache
+Description: Node-RED nodes for Model Context Protocol servers
+ Node-RED wrapper for Model Context Protocol (MCP) servers providing
+ standardized AI agent tool interfaces, server lifecycle management,
+ real-time communication capabilities, and visual MCP server creation.

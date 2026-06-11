@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+PKG   := node-red-contrib-mcp-server
+APPID := io.github.vitexus.node_red_contrib_mcp_server
+
+%:
+	dh $@ --with nodejs
+
+override_dh_install:
+	dh_install
+	install -D -m 644 debian/$(PKG).metainfo.xml \
+	    debian/$(PKG)/usr/share/metainfo/$(APPID).metainfo.xml
+
+override_dh_auto_test:
+	appstreamcli validate --no-net debian/$(PKG).metainfo.xml

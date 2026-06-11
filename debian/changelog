@@ -1,0 +1,5 @@
+node-red-contrib-mcp-server (1.1.5) unstable; urgency=medium
+
+  * Initial Debian packaging of node-red-contrib-mcp-server.
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Wed, 11 Jun 2026 12:00:00 +0200
