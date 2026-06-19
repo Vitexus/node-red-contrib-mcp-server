@@ -1,15 +1,31 @@
 #!/usr/bin/make -f
+export DH_VERBOSE = 1
 
 PKG   := node-red-contrib-mcp-server
+DEST  := debian/$(PKG)/usr/share/node-red/node_modules/$(PKG)
 APPID := io.github.vitexus.node_red_contrib_mcp_server
 
 %:
-	dh $@ --with nodejs
+	dh $@
 
-override_dh_install:
-	dh_install
-	install -D -m 644 debian/$(PKG).metainfo.xml \
-	    debian/$(PKG)/usr/share/metainfo/$(APPID).metainfo.xml
+override_dh_auto_build:
+	npm install --production --ignore-scripts
+
+override_dh_auto_install:
+	install -d $(DEST)
+	cp -a *.js *.html package.json README.md CHANGELOG.md $(DEST)/
+	[ -d examples ] && cp -a examples $(DEST)/ || true
+	[ -d node_modules ] && \
+		install -d $(DEST)/node_modules && \
+		cp -a node_modules/. $(DEST)/node_modules/ \
+		|| true
+	install -d debian/$(PKG)/usr/share/metainfo
+	install -m 644 debian/$(PKG).metainfo.xml \
+		debian/$(PKG)/usr/share/metainfo/$(APPID).metainfo.xml
 
 override_dh_auto_test:
 	appstreamcli validate --no-net debian/$(PKG).metainfo.xml; test $$? -le 3
+
+override_dh_shlibdeps:
+
+override_dh_strip:
