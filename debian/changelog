@@ -1,3 +1,15 @@
+node-red-contrib-mcp-server (1.1.5+nrpath3) trixie; urgency=medium
+
+  * Remove node-ws, node-express, node-axios, node-uuid, node-eventsource
+    from Depends: all directly or transitively require nodejs:any which
+    conflicts with VitexSoftware node-red packaging.
+    ws/express/axios are bundled by node-red; uuid/eventsource are now
+    bundled via npm install into the package's own node_modules.
+  * Keep node-cache Depends (vitexsoftware package, no nodejs:any chain).
+  * Restore npm install build step for bundling uuid + eventsource.
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Thu, 19 Jun 2026 17:00:00 +0200
+
 node-red-contrib-mcp-server (1.1.5+nrpath2) trixie; urgency=medium
 
   * Drop npm install / bundled node_modules: ws, express, axios are bundled

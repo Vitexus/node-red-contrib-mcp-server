@@ -8,10 +8,17 @@ APPID := io.github.vitexus.node_red_contrib_mcp_server
 %:
 	dh $@
 
+override_dh_auto_build:
+	npm install --production --ignore-scripts
+
 override_dh_auto_install:
 	install -d $(DEST)
 	cp -a *.js *.html package.json README.md CHANGELOG.md $(DEST)/
 	[ -d examples ] && cp -a examples $(DEST)/ || true
+	[ -d node_modules ] && \
+		install -d $(DEST)/node_modules && \
+		cp -a node_modules/. $(DEST)/node_modules/ \
+		|| true
 	install -d debian/$(PKG)/usr/share/metainfo
 	install -m 644 debian/$(PKG).metainfo.xml \
 		debian/$(PKG)/usr/share/metainfo/$(APPID).metainfo.xml
