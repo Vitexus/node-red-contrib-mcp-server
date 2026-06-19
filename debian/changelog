@@ -1,3 +1,13 @@
+node-red-contrib-mcp-server (1.1.5+nrpath4) trixie; urgency=medium
+
+  * node-uuid and node-eventsource are safe as Depends: verified with aptitude
+    that their required-only dep chains do not reach nodejs:any (apt-cache
+    --recurse was misleading — it counts Recommends/Suggests transitively).
+    Drop npm bundling; add node-uuid, node-eventsource back to Depends.
+  * Remove nodejs/npm from Build-Depends (no npm install step needed).
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Thu, 19 Jun 2026 17:30:00 +0200
+
 node-red-contrib-mcp-server (1.1.5+nrpath3) trixie; urgency=medium
 
   * Remove node-ws, node-express, node-axios, node-uuid, node-eventsource

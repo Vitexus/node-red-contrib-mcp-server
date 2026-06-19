@@ -4,8 +4,6 @@ Priority: optional
 Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
 Build-Depends:
  debhelper-compat (= 13),
- nodejs (>= 20),
- npm,
  appstream
 Standards-Version: 4.7.0
 Homepage: https://github.com/MadTinker/node-red-contrib-mcp-server
@@ -17,6 +15,8 @@ Multi-Arch: foreign
 Depends:
  ${misc:Depends},
  node-red (>= 4.0),
+ node-uuid,
+ node-eventsource,
  node-cache
 Description: Node-RED nodes for Model Context Protocol servers
  Node-RED wrapper for Model Context Protocol (MCP) servers providing
