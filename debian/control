@@ -4,7 +4,6 @@ Priority: optional
 Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
 Build-Depends:
  debhelper-compat (= 13),
- dh-nodejs | pkg-js-tools,
  appstream
 Standards-Version: 4.7.0
 Homepage: https://github.com/MadTinker/node-red-contrib-mcp-server

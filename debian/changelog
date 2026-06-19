@@ -1,3 +1,12 @@
+node-red-contrib-mcp-server (1.1.5+nrpath2) trixie; urgency=medium
+
+  * Drop npm install / bundled node_modules: ws, express, axios are bundled
+    by node-red; uuid and eventsource come from deb packages (already in
+    Depends); node-cache from vitexsoftware repo.
+  * Remove dh-nodejs from Build-Depends (no longer using --with nodejs).
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Thu, 19 Jun 2026 16:30:00 +0200
+
 node-red-contrib-mcp-server (1.1.5+nrpath1) trixie; urgency=medium
 
   * Install to /usr/share/node-red/node_modules/ so node-red palette loader
